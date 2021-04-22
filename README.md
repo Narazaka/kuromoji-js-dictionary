@@ -18,12 +18,18 @@ mecab-ipadic-neologdの汎用辞書のみプリセットで含んでます。
 
 ## 準備
 
-GitLFS/xz/nkfのインストール
+xzのインストール
 
 ```
-brew install git-lfs
 brew install xz
 ```
+
+## mecab-ipadic-nelogdの辞書を変換する
+
+1. `git submodule update --init`
+2. `npm run convert` を実行
+3. エラーがなければ dict/neologdディレクトリに****.tar.gzが作成されます
+4. 辞書作成を実行する
 
 ### 辞書作成
 
@@ -32,13 +38,6 @@ brew install xz
 ```
 
 ※ 同梱辞書セットはdictディレクトリに格納済みなので上記コマンドで辞書が生成されます。
-
-## mecab-ipadic-nelogdの他の辞書を追加する
-
-1. ./neologd-seedディレクトリに****.csv.xzを置く
-2. `npm run convert` を実行
-3. エラーがなければ dict/neologdディレクトリに****.tar.gzが作成されます
-4. 辞書作成を実行する
 
 ## カスタム辞書の追加
 

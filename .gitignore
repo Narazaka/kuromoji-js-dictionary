@@ -1,4 +1,4 @@
 .tmp
 dist
 node_modules
-neologd-seed/*.csv
+dict/neologd/*.csv.tar.gz
