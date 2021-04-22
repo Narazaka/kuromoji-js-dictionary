@@ -46,6 +46,10 @@ DictCommand.flags = {
   clean: flags.boolean({
     description: 'clean outPath directory',
     default: true
+  }),
+  verbose: flags.boolean({
+    description: 'verbose',
+    default: false
   })
 };
 
