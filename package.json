@@ -6,6 +6,7 @@
   "scripts": {
     "start": "./index.js --verbose",
     "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -w -s -r 0",
+    "convert:bydocker": "docker-compose run --rm convert npm run convert",
     "convert": "npm run xz && npm run euc && npm run tar && npm run xz:clean",
     "xz": "xz -dkf ./mecab-ipadic-neologd/seed/*.xz",
     "euc": "find ./mecab-ipadic-neologd/seed -name '*.csv' -exec sh -c 'nkf -e --overwrite {}' \\;",
