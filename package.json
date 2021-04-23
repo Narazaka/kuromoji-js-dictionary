@@ -6,8 +6,9 @@
   "scripts": {
     "start": "./index.js --verbose",
     "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -w -s -r 0",
-    "convert": "npm run xz && npm run tar && npm run xz:clean",
+    "convert": "npm run xz && npm run euc && npm run tar && npm run xz:clean",
     "xz": "xz -dkf ./mecab-ipadic-neologd/seed/*.xz",
+    "euc": "find ./neologd-seed -name '*.csv' -exec sh -c 'nkf -e --overwrite {}' \\;",
     "tar": "find ./mecab-ipadic-neologd/seed -name '*.csv' -exec sh -c 'tar -cvzf ./dict/neologd/$(basename '{}').tar.gz {}' \\;",
     "xz:clean": "rm ./mecab-ipadic-neologd/seed/*.csv"
   },
